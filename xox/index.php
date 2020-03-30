@@ -1,24 +1,5 @@
-<?php
-$dosya = fopen("bilgi.txt","a+");
-date_default_timezone_set('Europe/Istanbul');
-$IP_Adresi = $_SERVER["REMOTE_ADDR"]; //Ziyaretcinin Ip adresini verir.
-$Tarayici = $_SERVER["HTTP_USER_AGENT"]; //Ziyaretcinin kullandigi Tarayiciyi verir.
-$Tarih = time();
-$bu = "";
-if (stripos($Tarayici, "Instagram") !== false) {
-   $bu = "INSTAGRAM"; 
-}
-$kaydet = "\n".date("Y-m-d",$Tarih)." - ".date('H:i:s')."\t".$IP_Adresi."\t".$bu."\t".$Tarayici."\n";
-// echo ip_info(“Visitor”, “State”);
-fwrite($dosya,$kaydet);
-/* while ($oku = fgets($dosya)) {
-  echo $oku."<br />";
-  // code...
-} */
-
-?>
 <!DOCTYPE html>
-<html lang="tr" >
+<html lang="en" >
 <head>
 <?php
 //function savepoint(){
