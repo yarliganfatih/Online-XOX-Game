@@ -1,22 +1,3 @@
-<?php
-$dosya = fopen("bilgi.txt","a+");
-date_default_timezone_set('Europe/Istanbul');
-$IP_Adresi = $_SERVER["REMOTE_ADDR"]; //Ziyaretcinin Ip adresini verir.
-$Tarayici = $_SERVER["HTTP_USER_AGENT"]; //Ziyaretcinin kullandigi Tarayiciyi verir.
-$Tarih = time();
-$bu = "";
-if (stripos($Tarayici, "Instagram") !== false) {
-   $bu = "INSTAGRAM"; 
-}
-$kaydet = "\n"."2 Player \t".date("Y-m-d",$Tarih)." - ".date('H:i:s')."\t".$IP_Adresi."\t".$bu."\t".$Tarayici."\n";
-// echo ip_info(“Visitor”, “State”);
-fwrite($dosya,$kaydet);
-/* while ($oku = fgets($dosya)) {
-  echo $oku."<br />";
-  // code...
-} */
-
-?>
 <!DOCTYPE html>
 <html lang="tr" >
 <head>
@@ -30,7 +11,7 @@ fwrite($dosya,$kaydet);
 	<script type="text/javascript">
 		var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()))
 		if(mobile){
-		document.location="player1m.php";
+		document.location="2mplayer.php";
 	}</script>
 	<style>
 		@font-face {
